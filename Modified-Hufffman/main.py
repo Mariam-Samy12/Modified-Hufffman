@@ -1,4 +1,4 @@
-from Huffman import (
+from Files_handling import (
     read_input_file,
     save_compressed_file,
     read_compressed_file,
