@@ -7,32 +7,11 @@ from Huffman import (
 
 import Compression
 import Decompression
-#decompress input
-# codes={
-#     'a':'00',
-#     'b':'011',
-#     'c':'010',
-#     'd':'11',
-#     'others':'10'
-# }
 
-# orignal_code={
-#     'a': '0000',
-#     'b': '0001',
-#     'c' :'0010',
-#     'd': '0011',
-#     'f' :'0100',
-#     'p' :'0101',
-#     'q' :'0110',
-#     'u' :'0111',
-#     'z' :'1000'
-# }
-
-# compressed_code='000110100010100011001001000101001101100110101001110001100100101100011'
 
 def main():
     min_limit = float(input("Enter Minimum Probability Limit (default 0.05): ") or 0.05)
-    input_txt = r"C:\Users\ranos\PycharmProjectsHelloWorld\Modified-Hufffman\input.txt"
+    input_txt = "files/input.txt"
     compressed_bin = "compressed.bin"
     decompressed_txt = "decompressed.txt"
 
