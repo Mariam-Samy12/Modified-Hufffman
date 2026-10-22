@@ -3,6 +3,7 @@ from Files_handling import (
     save_compressed_file,
     read_compressed_file,
     save_decompressed_file,
+    save_compressed_text
 )
 from Compression import compression
 from Decompression import decompress
@@ -19,7 +20,7 @@ def main():
 
         choice = input("Choose an option: ")
         try:
-            if choice == "1":
+           if choice == "1":
                 min_limit = float(input("Enter Minimum Probability Limit (default 0.05): ") or 0.05)
                 input_txt=input("Enter the name of the text file to compress (e.g. input.txt): ")
                 text = "".join(read_input_file(input_txt).split())
@@ -33,8 +34,9 @@ def main():
                     others_code_map,
                     text_file,
                 )
+                save_compressed_text(bitstring, "../files/compressed.txt")
                 print("Compressed and saved to binary file successfully!")
-            elif choice == "2":
+           elif choice == "2":
                 compressed_bin = input("Enter the name of the compressed file (e.g. compressed.bin): ")
                 bitstring, header = read_compressed_file(compressed_bin)
 
@@ -45,15 +47,13 @@ def main():
                 )
                 decompressed_txt = input("Enter a name for the output text file (e.g. decompressed.txt): ")
                 save_decompressed_file(decoded_text, decompressed_txt)
-
                 print("Decompressed and saved to text file successfully!")
 
-            elif choice == "3":
+           elif choice == "3":
                 print("Goodbye!💗")
                 break
-
-            else:
-                print("Invalid choice!")
+           else:
+               print("Invalid choice!")
         except:
             print("Something went wrong! Please check your input and try again.")
 

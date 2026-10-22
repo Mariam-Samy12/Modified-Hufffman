@@ -25,6 +25,10 @@ def save_compressed_file(bitstring, huffman_codes, others_code_map, output_bin_p
         f.write(byte_array)
 
 
+def save_compressed_text(bitstring, output_txt_path="compressed.txt"):
+    with open(output_txt_path, "w", encoding="utf-8") as f:
+        f.write(bitstring)
+
 def read_compressed_file(input_bin_path="compressed.bin"):
     with open(input_bin_path, "rb") as f:
         header_length = int.from_bytes(f.read(4), byteorder="big")
