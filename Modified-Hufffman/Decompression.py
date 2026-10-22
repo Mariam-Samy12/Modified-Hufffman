@@ -1,5 +1,5 @@
 #Decompression Function
-def decompress(compressed_code, codes, orignal_code):
+def decompress(self, compressed_code, codes, orignal_code):
     reverse_codes = {}
     for x in codes:
         reverse_codes[codes[x]] = x
