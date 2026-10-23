@@ -81,9 +81,12 @@ def compression(text, Minimum_Probability_Limit):
             generate_codes(node.right, current_code + "0")
 
 
-    if len(nodes) == 2:
+    if len(nodes) == 1:
+        generate_codes(nodes[0], "0") 
+
+    elif len(nodes) == 2:
         generate_codes(nodes[0], "1")
-        generate_codes(nodes[1], "0")
+        generate_codes(nodes[1], "0")  
 
 
     others_code_map = {

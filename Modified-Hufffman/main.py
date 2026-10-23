@@ -34,7 +34,8 @@ def main():
                     others_code_map,
                     text_file,
                 )
-                save_compressed_text(bitstring, "../files/compressed.txt")
+                showtext=input("Enter a name for the text file (e.g. compressed.txt):")
+                save_compressed_text(bitstring, showtext)
                 print("Compressed and saved to binary file successfully!")
            elif choice == "2":
                 compressed_bin = input("Enter the name of the compressed file (e.g. compressed.bin): ")
@@ -54,8 +55,8 @@ def main():
                 break
            else:
                print("Invalid choice!")
-        except:
-            print("Something went wrong! Please check your input and try again.")
+        except Exception as e:
+            print(f"Error: {e}")
 
 
 
